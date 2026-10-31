@@ -1,23 +1,2 @@
+<app-targeta-element [element]="elementProva" (selecciona)="mostraSeleccio($event)"></app-targeta-element>
 
-
-
-<main class="app-shell">
-  <section class="intro">
-    <h1>{{ nomAplicacio }}</h1>
-    <p>Sóc el Jorge Méndez, i aquesta serà una breu aplicació per gestionar una biblioteca. Tot i que és una temàtica molt feta servir,
-      em sento còmode amb el fet de centrar-me a la part tècnica i no haver de pensar en uno nou model de negoci que no conec prou.</p>
-    <p>modificació per a comprobar el hot reload</p>
-  </section>
-
-  <section class="project-card">
-    <h2>Dades del projecte</h2>
-    <p>Estat: Projecte base llest (text obligatori)</p>
-    <p>Framework: Angular 22</p>
-  </section>
-
-  <aside class="note">
-    <p>Nota: aquest projecte s'ampliarà durant el mòdul.</p>
-  </aside>
-</main>
-
-<router-outlet />

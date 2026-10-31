@@ -1,13 +1,25 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { TargetaElementComponent } from './components/targeta-element/targeta-element.component';
+import { Element } from './models/element.model';
 
 @Component({
-  imports: [RouterOutlet],
+  imports: [TargetaElementComponent],
   selector: 'app-root',
   styleUrl: './app.component.scss',
   templateUrl: './app.component.html',
 })
 export class App {
-  protected readonly title = signal('ioc-angular-gestio-biblioteca-jorge-mendez');
-  public nomAplicacio = "Gestió de biblioteca";
+  elementProva: Element = {
+    id: 1,
+    titol: 'Element de prova',
+    descripcio: 'Descripció d\'exemple per verificar la targeta',
+    genere: 'terror',
+    dataPublicacio: '2026-09-10',
+    valoracioLectors: 4.5,
+    disponible: true,
+  };
+
+  mostraSeleccio(element: Element): void {
+    console.log('Seleccionat:', element.titol);
+  }
 }
