@@ -1,2 +1,32 @@
-<app-targeta-element [element]="elementProva" (selecciona)="mostraSeleccio($event)"></app-targeta-element>
+<header class="capcalera">
+  <h1>Catàleg de llibres</h1>
+  <p>Unitat 2 - Components i interfície</p>
+</header>
 
+<main class="contenidor">
+  <app-barra-filtres class="filtres-zona" (filtresCanviats)="actualitzaFiltres($event)">
+  </app-barra-filtres> 
+  <section class="resultats">
+    <h2>Elements</h2>
+    <app-llista-elements [elements]="elementsFiltrats" [elementSeleccionatId]="elementSeleccionat?.id" (selecciona)="seleccionaElement($event)" 
+/>
+
+  </section>
+
+  <aside class="detall" aria-live="polite">
+    <h2>Detall</h2>
+    @if (elementSeleccionat) {
+      <h3>{{ elementSeleccionat.titol }}</h3>
+      <p>{{ elementSeleccionat.descripcio }}</p>
+      <ul>
+        <li><strong>Categoria:</strong> {{ elementSeleccionat.genere }}</li>
+        <li><strong>Valoració:</strong> {{ elementSeleccionat.valoracioLectors }}/5</li>
+      </ul>
+      <button type="button" (click)="tancaDetall()">Tanca el detall</button>
+    } @else {
+      <p>Seleccioneu un element per veure'n el detall.</p>
+    }
+  </aside>
+</main>
+
+<router-outlet />

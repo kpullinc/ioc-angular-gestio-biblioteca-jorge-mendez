@@ -2,7 +2,7 @@
   <header class="targeta-capcalera">
     <app-etiqueta-element [genere]="element.genere" [disponible]="element.disponible ?? false">
     </app-etiqueta-element>
-    S <time [attr.datetime]="element.dataPublicacio">
+    <time [attr.datetime]="element.dataPublicacio">
       {{ element.dataPublicacio | date:'dd/MM/yyyy' }}
     </time>
   </header>
