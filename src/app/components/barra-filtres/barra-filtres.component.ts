@@ -4,7 +4,7 @@ import { GenereElement } from '../../models/element.model';
 
 export interface FiltresElement {
   text: string;
-  genere: GenereElement | 'Totes';
+  genere: GenereElement | 'Tots';
 }
 
 @Component({
@@ -16,11 +16,11 @@ export interface FiltresElement {
 export class BarraFiltresComponent {
   @Output() filtresCanviats = new EventEmitter<FiltresElement>();
 
-  generes: Array<GenereElement | 'Totes'> = ['Totes', 'terror', 'novela', 'teatre', 'poesia'];
+  generes: Array<GenereElement | 'Tots'> = ['Tots', 'terror', 'novela', 'teatre', 'poesia'];
 
   filtres: FiltresElement = {
     text: '',
-    genere: 'Totes',
+    genere: 'Tots',
   };
 
   aplicaFiltres(): void {
@@ -28,7 +28,7 @@ export class BarraFiltresComponent {
   }
 
   restableixFiltres(): void {
-    this.filtres = { text: '', genere: 'Totes' };
+    this.filtres = { text: '', genere: 'Tots' };
     this.aplicaFiltres();
   }
 }
