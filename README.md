@@ -27,5 +27,8 @@ Acabada. I esperem que de forma correcta. He ampliat creant els components:
 - LlistaElementsComponent
 
 
-## Enllaç del repositori
+## Enllaç del repositori principal
 https://github.com/kpullinc/ioc-angular-gestio-biblioteca-jorge-mendez
+
+## Enllaç a la branca 2
+https://github.com/kpullinc/ioc-angular-gestio-biblioteca-jorge-mendez/tree/ra2-components
