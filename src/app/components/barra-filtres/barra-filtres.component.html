@@ -4,11 +4,13 @@
     <input id="text" name="text" type="search" [(ngModel)]="filtres.text" #campText="ngModel" minlength="3" placeholder="Opcional, mínim 3 caràcters" aria-describedby="text-ajuda text-error" />
     <span id="text-ajuda" class="ajuda">Opcional: si escriviu text, ha de tenir 3 caràcters com a mínim. Podeu filtrar només per categoria.
     </span>
+    <!--Si el text es invalid, mostra l'avís en vermell-->
     @if (campText.invalid && (campText.dirty || campText.touched)) {
-      <strong id ="text-error" class="error" role="alert">
-        La cerca ha de tenir 3 caràcters com a mínim.
+      <strong id="text-error" class="error" role="alert">
+        Necessitem com a mínim 3 caràcter per fer la cerca.
       </strong>
     }
+
   </div>
 
   <div class="camp">

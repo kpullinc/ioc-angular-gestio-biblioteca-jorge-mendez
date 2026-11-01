@@ -3,6 +3,7 @@
     <app-etiqueta-element [genere]="element.genere" [disponible]="element.disponible ?? false">
     </app-etiqueta-element>
     <time [attr.datetime]="element.dataPublicacio">
+      <!-- ara fem que la data aparegui en format dia-mes-any mitjançant un pipe-->
       {{ element.dataPublicacio | date:'dd/MM/yyyy' }}
     </time>
   </header>

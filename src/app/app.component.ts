@@ -15,14 +15,14 @@ export class App {
   elements: Element[] = ELEMENTS_MOCK;
   elementsFiltrats: Element[] = ELEMENTS_MOCK;
   elementSeleccionat: Element | undefined = undefined;
-  filtresActuals: FiltresElement = { text: '', genere: 'Totes' };
+  filtresActuals: FiltresElement = { text: '', genere: 'Tots' };
 
   actualitzaFiltres(filtres: FiltresElement): void {
     this.filtresActuals = filtres;
     const text = filtres.text.trim().toLocaleLowerCase('ca');
 
     this.elementsFiltrats = this.elements.filter((element) => {
-      const genereCoincideix = filtres.genere === 'Totes' || element.genere === filtres.genere;
+      const genereCoincideix = filtres.genere === 'Tots' || element.genere === filtres.genere;
       const textCoincideix = text === '' || this.conteText(element, text);
       return genereCoincideix && textCoincideix;
     });

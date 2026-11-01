@@ -5,14 +5,41 @@
 
 <main class="contenidor">
   <app-barra-filtres class="filtres-zona" (filtresCanviats)="actualitzaFiltres($event)">
-  </app-barra-filtres> 
+  </app-barra-filtres>
   <section class="resultats">
-    <h2>Elements</h2>
+    <h2>Elements
+      <span class="comptador" aria-live="polite" >
+        : {{elementsFiltrats.length}} elements sel·leccionats de entre el catàleg de {{elements.length}}
+      </span>
+    </h2>
+    <!--Ara farem un if que mirarà el tamany de l'arrya dels elementsFiltrats. En cas de que no hi hagi elements, 
+    llença el @else amb un avís de que no tenim llibres que compleixin aquest criter-->
+@if (elementsFiltrats.length > 0) {
+    <app-llista-elements 
+      [elements]="elementsFiltrats" 
+      [elementSeleccionatId]="elementSeleccionat?.id" 
+      (selecciona)="seleccionaElement($event)" 
+    />
+  } @else {
+
+<div class="sense-resultats" role="status">
+      Cerca
+      <p>No tenim cap llibre que compleixi aquest criteri de cerca.
+    </p>
+    <p>
+      Proveu un altre text o trieu el gènere «Tots».
+    </p>
+</div>
+  }
+
     <app-llista-elements [elements]="elementsFiltrats" [elementSeleccionatId]="elementSeleccionat?.id" (selecciona)="seleccionaElement($event)" 
 />
 
   </section>
 
+  <!-- Tot i que en aquest cas l'aside no aporta cap informació que no tingui ja el component etiqueta, ens permet
+   jugar amb el @if @else, atés que aconseguim que a l'aside sembre hi hagi contingut, ja sigui les dades d'un llibre
+   o un avís de que seleccionin un llibre per desplegar els detalls-->
   <aside class="detall" aria-live="polite">
     <h2>Detall</h2>
     @if (elementSeleccionat) {

@@ -1,5 +1,7 @@
 <span class="etiqueta" [class.etiqueta-disponible]="genere">
   {{ genere }}
+  <!--aquí aprofitem @Input del .ts. El pare li envia senyal de que el llibre està disponible (per defecto no ho està)
+  i el ts envía el valor a la plantilla. La plantilla decideix si mostrar l'etiqueta o no.-->
   @if (disponible) {
     ★
     <span class="visually-hidden">obra disponible</span>

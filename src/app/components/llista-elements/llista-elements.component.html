@@ -1,11 +1,14 @@
 <section class="graella" aria-label="Llistat d'elements">
+<!--fem el recorregut per l'array d'elements. Amb cada element, invoquem al component targeta que dibuixa les dades. -->
   @for (element of elements; track element.id) {
     <app-targeta-element
       [element]="element"
       [seleccionada]="element.id === elementSeleccionatId"
       (selecciona)="propagaSeleccio($event)">
     </app-targeta-element>
+    <!--en cas de que estigui buit, surt un missatge d'avís.
+    En aquest cas, és redundant, per què ja treia l'avís a través de app.component.html-->
   } @empty {
-    <p class="missatge-buit" role="status">No hi ha elements per mostrar.</p>
+    <p class="missatge-buit" role="status">No hi ha elements per mostrar...per si no quedava clar!.</p>
   }
 </section>

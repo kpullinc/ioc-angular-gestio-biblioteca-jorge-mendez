@@ -1,6 +1,9 @@
 # Nom de l'aplicació
 Gestió de biblioteca
 
+# Versió de l'aplicació
+0.2
+
 ## Autor/a
 Jorge Méndez
 
@@ -16,8 +19,13 @@ Git 2.43.0
 ## Com crear i executar el projecte
 ng serve -o
 
-## Estat de l'EAC1
-Acabada. I esperem que de forma correcta.
+## Estat de l'EAC2
+Acabada. I esperem que de forma correcta. He ampliat creant els components:
+- EtiquetaElementComponent
+- TargetaElementComponent
+- BarraFiltresComponent
+- LlistaElementsComponent
+
 
 ## Enllaç del repositori
 https://github.com/kpullinc/ioc-angular-gestio-biblioteca-jorge-mendez
