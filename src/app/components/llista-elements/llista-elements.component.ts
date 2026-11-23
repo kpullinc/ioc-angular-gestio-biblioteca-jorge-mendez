@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Element } from '../../models/element.model';
+import { ElementBiblioteca } from '../../models/element.model';
 import { TargetaElementComponent } from '../targeta-element/targeta-element.component';
 
 @Component({
@@ -9,11 +9,15 @@ import { TargetaElementComponent } from '../targeta-element/targeta-element.comp
   templateUrl: './llista-elements.component.html',
 })
 export class LlistaElementsComponent {
-  @Input({ required: true }) elements: Element[] = [];
-  @Input() elementSeleccionatId?: number;
-  @Output() selecciona = new EventEmitter<Element>();
+  @Input({ required: true }) elements!: ElementBiblioteca[];
+  @Input() elementSeleccionatId?: number; // mismo tipo que ElementBiblioteca.id
+  @Output() selecciona = new EventEmitter<ElementBiblioteca>();
 
-  propagaSeleccio(element: Element): void {
+  propagaSeleccio(element: ElementBiblioteca): void {
     this.selecciona.emit(element);
   }
+
+//****
+
+//
 }

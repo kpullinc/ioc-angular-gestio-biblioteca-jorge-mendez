@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { GenereElement } from '../../models/element.model';
+import { GenereElement, GENERES } from '../../models/element.model';
 
 export interface FiltresElement {
   text: string;
@@ -16,7 +16,9 @@ export interface FiltresElement {
 export class BarraFiltresComponent {
   @Output() filtresCanviats = new EventEmitter<FiltresElement>();
 
-  generes: Array<GenereElement | 'Tots'> = ['Tots', 'terror', 'novela', 'teatre', 'poesia'];
+  //generes: Array<GenereElement | 'Tots'> = ['Tots', 'terror', 'novela', 'teatre', 'poesia']; 
+  // //Antic, ara he modificat la declaració dels gèneres.
+  readonly generes = GENERES;
 
   filtres: FiltresElement = {
     text: '',

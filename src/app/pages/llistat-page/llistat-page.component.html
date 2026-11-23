@@ -1,0 +1,60 @@
+<div class="cataleg-page">
+  <header class="page-header">
+    <h1>Catàleg de Biblioteca</h1>
+    <p class="subtitle">Llistat de llibres al fons bibliogràfic</p>
+  </header>
+    <app-formulari-cerca (cercaEnviada)="onCerca($event)"/>  
+  @switch (elementService.estat().estat) {
+    @case ('inicial') {
+      <div class="estat-inicial">
+        <p>Inicialitzant...</p>
+      </div>
+    }
+
+    @case ('carregant') {
+      <div class="estat-carregant" role="status" aria-live="polite">
+        <div class="spinner" aria-hidden="true"></div>
+        <p>Carregant elements...</p>
+      </div>
+    }
+
+    @case ('error') {
+      <div class="estat-error" role="alert">
+        <div class="error-icon" aria-hidden="true">⚠️</div>
+        <h2>Error en carregar els elements</h2>
+        <p class="error-missatge">{{ elementService.estat().error }}</p>
+        <button type="button" class="btn-reintentar" (click)="reintentar()">Reintentar</button>
+      </div>
+    }
+
+    @case ('exit') {
+      <div class="estat-exit">
+        <div class="elements-grid">
+          @for (element of elementService.estat().elements; track element.id) {
+            <article class="element-card">
+              <img [src]="element.imatge" [alt]="element.titol" class="element-imatge">
+              <div class="element-info">
+                <h3 class="element-titol">{{ element.titol }}</h3>
+                <p class="element-genere">{{ element.genere }}</p>
+                <p class="element-descripcio">{{ element.descripcio }}</p>
+                <div class="element-footer">
+                  <span class="element-valoracioLectors">Valoració: {{ element.valoracioLectors }} </span>
+                  <span class="disponible" >
+                    Disponible: {{ element.disponible }}
+                  </span>
+                </div>
+              </div>
+            </article>
+          }
+          @empty {
+            <div class="sense-resultats" role="status">
+              <p>No s'ha trobat cap element amb aquests criteris.</p>
+            </div>
+          }
+        </div>
+        <app-formulari-nou-element />
+      </div>
+    }
+  }
+
+</div>

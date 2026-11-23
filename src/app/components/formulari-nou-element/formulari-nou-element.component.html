@@ -1,0 +1,64 @@
+<form class="formulari-alta" [formGroup]="formulari" (ngSubmit)="crear()" aria-label="Nou element">
+  <h2>Afegir un llibre a la biblioteca</h2>
+
+  <div class="camp">
+    <label for="titol">Títol</label>
+    <input id="titol" type="text" formControlName="titol" [class.invalid]="teError('titol')" />
+    @if (teError('titol')) {
+      <p class="missatge-error" role="alert">El títol és obligatori (mínim 3 caràcters).</p>
+    }
+  </div>
+
+  <div class="camp">
+    <label for="descripcio">Descripció</label>
+    <textarea id="descripcio" formControlName="descripcio" rows="2" [class.invalid]="teError('descripcio')"></textarea>
+    @if (teError('descripcio')) {
+      <p class="missatge-error" role="alert">La descripció és obligatòria (mínim 10 caràcters).</p>
+    }
+  </div>
+
+  <div class="fila">
+    <div class="camp">
+      <label for="genere">Gènere</label>
+      <select id="genere" formControlName="genere">
+        @for (genere of generes; track genere) {
+          <option [value]="genere">{{ genere }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="camp">
+      <label for="valoracioLectors">Valoració dels lectors</label>
+      <input id="valoracioLectors" type="number" step="0.01" min="0.01" formControlName="valoracioLectors" [class.invalid]="teError('valoracioLectors')" />
+      @if (teError('valoracioLectors')) {
+        <p class="missatge-error" role="alert">Una valoració ha de ser superior a 0.</p>
+      }
+    </div>
+
+    <div class="camp">
+      <label for="dataPublicacio">Data de publicació</label>
+      <input id="dataPublicacio" type="date" formControlName="dataPublicacio" [class.invalid]="teError('dataPublicacio')" />
+      @if (teError('dataPublicacio')) {
+        <p class="missatge-error" role="alert">La data de publicació ha de ser en format AAAA-MM-DD.</p>
+      }
+    </div>
+  </div>
+    <div class="camp">
+    <label>
+        <input type="checkbox" formControlName="disponible" />
+        Disponible
+    </label>
+    </div>
+  <div class="accions">
+    <button type="submit" [disabled]="formulari.invalid || enviant()">
+      {{ enviant() ? 'Enviant...' : 'Crear element' }}
+    </button>
+  </div>
+
+  @if (missatge()) {
+    <p class="missatge-exit" role="status">{{ missatge() }}</p>
+  }
+  @if (error()) {
+    <p class="missatge-error" role="alert">{{ error() }}</p>
+  }
+</form>

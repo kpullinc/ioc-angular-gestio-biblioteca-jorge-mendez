@@ -1,0 +1,135 @@
+{
+  "llibres": [
+    {
+      "id": "1",
+      "titol": "Don Quijote de la Mancha",
+      "descripcio": "Novela de Miguel de Cervantes sobre las aventuras de un hidalgo",
+      "categoria": "Novela",
+      "dataPublicacio": "1605-01",
+      "imatge": "https://placehold.co/300x200",
+      "valoracioLectors": 48,
+      "esDisponible": true
+    },
+    {
+      "id": "2",
+      "titol": "La plaça del Diamant",
+      "descripcio": "Novel·la de Mercè Rodoreda ambientada a la Barcelona de la postguerra",
+      "categoria": "Novela",
+      "dataPublicacio": "1962",
+      "imatge": "https://placehold.co/300x200",
+      "valoracioLectors": 47,
+      "esDisponible": true
+    },
+    {
+      "id": "3",
+      "titol": "Cien años de soledad",
+      "descripcio": "Obra maestra de Gabriel García Márquez sobre la familia Buendía",
+      "categoria": "Novela",
+      "dataPublicacio": "1967-05-30",
+      "imatge": "https://placehold.co/300x200",
+      "valoracioLectors": 49,
+      "esDisponible": true
+    },
+    {
+      "id": "4",
+      "titol": "Tirant lo Blanc",
+      "descripcio": "Novel·la cavalleresca de Joanot Martorell sobre les gestes de Tirant",
+      "categoria": "TEatre",
+      "dataPublicacio": "1490-11-20",
+      "imatge": "https://placehold.co/300x200",
+      "valoracioLectors": 46,
+      "esDisponible": true
+    },
+    {
+      "id": "5",
+      "titol": "Orgullo y prejuicio",
+      "descripcio": "Clásico de Jane Austen sobre las relaciones sociales y el matrimonio",
+      "categoria": "Terror",
+      "dataPublicacio": "1813-01-28",
+      "imatge": "https://placehold.co/300x200",
+      "valoracioLectors": 47,
+      "esDisponible": false
+    },
+    {
+      "id": "6",
+      "titol": "1984",
+      "descripcio": "Novel·la distòpica de George Orwell sobre el control totalitari",
+      "categoria": "Novela",
+      "dataPublicacio": "1949-06-08",
+      "imatge": "https://placehold.co/300x200",
+      "valoracioLectors": 48,
+      "esDisponible": true
+    },
+    {
+      "id": "7",
+      "titol": "Crimen y castigo",
+      "descripcio": "Drama psicológico de Fiódor Dostoyevski sobre la culpa y la redención",
+      "categoria": "Novela",
+      "dataPublicacio": "1866-01",
+      "imatge": "https://placehold.co/300x200",
+      "valoracioLectors": 46,
+      "esDisponible": true
+    },
+    {
+      "id": "8",
+      "titol": "Solitud",
+      "descripcio": "Obra modernista de Víctor Català sobre la recerca personal a la muntanya",
+      "categoria": "Teatre",
+      "dataPublicacio": "1905",
+      "imatge": "https://placehold.co/300x200",
+      "valoracioLectors": 45,
+      "esDisponible": true
+    },
+    {
+      "id": "9",
+      "titol": "La Odisea",
+      "descripcio": "Poema épico de Homero que narra el regreso de Ulises a Ítaca",
+      "categoria": "Poesia",
+      "dataPublicacio": "1900",
+      "imatge": "https://placehold.co/300x200",
+      "valoracioLectors": 45,
+      "esDisponible": true
+    },
+    {
+      "id": "10",
+      "titol": "El Petit Príncep",
+      "descripcio": "Conte poètic d'Antoine de Saint-Exupéry sobre l'amistat i la vida",
+      "categoria": "Teatre",
+      "dataPublicacio": "1943-04-06",
+      "imatge": "https://placehold.co/300x200",
+      "valoracioLectors": 49,
+      "esDisponible": false
+    },
+    {
+      "id": "11",
+      "titol": "La Regenta",
+      "descripcio": "Novela realista de Leopoldo Alas Clarín ambientada en la ciudad de Vetusta",
+      "categoria": "novela",
+      "dataPublicacio": "1884",
+      "imatge": "https://placehold.co/300x200",
+      "valoracioLectors": 44,
+      "esDisponible": true
+    },
+    {
+      "id": "12",
+      "titol": "Frankenstein",
+      "descripcio": "Obra gòtica de Mary Shelley sobre la creació de vida artificial",
+      "categoria": "Terror",
+      "dataPublicacio": "1818-01-01",
+      "imatge": "https://placehold.co/300x200",
+      "valoracioLectors": 46,
+      "esDisponible": true
+    },
+    {
+      "id": "13",
+      "titol": "El gran Gatsby",
+      "descripcio": "Retrato de F. Scott Fitzgerald sobre el sueño americano en los años veinte",
+      "categoria": "novela",
+      "dataPublicacio": "1925-04-10",
+      "imatge": "https://placehold.co/300x200",
+      "valoracioLectors": 44,
+      "esDisponible": true
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

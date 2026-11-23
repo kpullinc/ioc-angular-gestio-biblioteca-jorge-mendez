@@ -1,0 +1,66 @@
+<div class="formulari-cerca">
+  <form [formGroup]="formulari" (ngSubmit)="enviar()" aria-label="Cerca de llibres">
+    <div class="camp-cerca">
+      <label for="terme">Cerca per nom o descripció</label>
+      <div class="entrada">
+        <input
+          id="terme"
+          type="search"
+          formControlName="terme"
+          placeholder="Mínim 3 caràcters"
+          class="input-cerca"
+          [class.invalid]="mostrarErrors"
+          aria-describedby="ajuda-terme error-terme" />
+        <div class="indicadors">
+          @if (terme.pending) {
+            <span class="spinner-petit" aria-hidden="true"></span>
+            <span class="visually-hidden">Comprovant...</span>
+          }
+          @if (terme.value) {
+            <button type="button" class="btn-netejar" (click)="netejar()" aria-label="Neteja la cerca">✕</button>
+          }
+        </div>
+      </div>
+      <small id="ajuda-terme" class="ajuda">Premeu Retorn o "Cercar" per aplicar els criteris de cerca de llibres.</small>
+      @if (mostrarErrors) {
+        <p id="error-terme" class="missatge-error" role="alert">{{ missatgeError }}</p>
+      }
+    </div>
+
+    <div class="camp-genere">
+      <label for="genere">Gènere</label>
+      <select id="genere" formControlName="genere">
+        <option value="">Tots els gèneres</option>
+        @for (genere of generes; track genere) {
+          <option [value]="genere">{{ genere }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="accions">
+      <button type="submit" class="btn-cercar" [disabled]="formulari.invalid || formulari.pending">Cercar</button>
+    </div>
+  </form>
+<section class="historial" aria-labelledby="titol-historial">
+  <div class="capcalera-historial">
+    <h2 id="titol-historial">Cerques recents</h2>
+    @if (historial.historial().length > 0) {
+      <button type="button" (click)="historial.netejar()">Neteja</button>
+    }
+  </div>
+
+  @if (historial.historial().length > 0) {
+    <ul>
+      @for (cerca of historial.historial(); track cerca.data) {
+        <li>
+          <button type="button" (click)="recuperar(cerca)">
+            {{ cerca.terme }} · {{ cerca.genere || 'Totes les categories' }}
+          </button>
+        </li>
+      }
+    </ul>
+  } @else {
+    <p>Encara no hi ha cerques desades.</p>
+  }
+</section>
+</div>

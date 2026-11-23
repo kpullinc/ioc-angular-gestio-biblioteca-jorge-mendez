@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { DatePipe } from '@angular/common';
-import { Element } from '../../models/element.model';
+import { ElementBiblioteca } from '../../models/element.model';
 import { EtiquetaElementComponent } from '../etiqueta-element/etiqueta-element.component';
 
 @Component({
@@ -10,9 +10,10 @@ import { EtiquetaElementComponent } from '../etiqueta-element/etiqueta-element.c
   templateUrl: './targeta-element.component.html',
 })
 export class TargetaElementComponent {
-  @Input({ required: true }) element!: Element;
+  @Input({ required: true }) element!: ElementBiblioteca;
   @Input() seleccionada = false;
-  @Output() selecciona = new EventEmitter<Element>();
+  //@Input({ alias: 'elementBiblioteca' })
+  @Output() selecciona = new EventEmitter<ElementBiblioteca>();
 
   avisaSeleccio(): void {
     this.selecciona.emit(this.element);

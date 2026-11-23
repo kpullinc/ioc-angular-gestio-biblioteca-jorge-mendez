@@ -15,9 +15,14 @@
 
   <div class="camp">
     <label for="categoria">Gènere</label>
-    <select id="categoria" name="categoria" [(ngModel)]="filtres.genere">
+      <select id="categoria" name="categoria" [(ngModel)]="filtres.genere">
+      <option value="Tots">Tots</option>
       @for (genere of generes; track genere) {
+        <!--
         <option [ngValue]="genere">{{ genere }}</option>
+        //versió anterior, a veure si ara funciona després dels canvis a genere.
+      -->
+        <option [value]="genere">{{ genere }}</option>
       }
     </select>
   </div>
